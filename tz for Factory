@@ -1,0 +1,47 @@
+Bu sayt Qurilish korxona uchun bo'ladi. Mijozlar foydalanishi bo'ladi va Biz ular qulaulik yaratib beramiz
+Avfzalliklari:
+-Mijoz uchun qulalik
+-Tez yetgazib berish ximati
+-Qurilish korxonani kuzatib tutish
+-Sifatli maxsulotlar
+-Qo'shimcha xo'jalik mollar
+-Vaqt tejash
+
+Model:
+-User
+-Order
+-Product
+-to be continute
+
+User:
+-phone_number Int
+-extra_phone_number Int
+-region Fk Region
+-address
+
+
+Product:
+-name Char
+-category FK Category
+-description Char
+-price Dec
+-quantity Int
+-photo Manyto Image
+-is_active Bl
+-create_at Date
+
+Order:
+-user FK User
+-procut Manyto Procut
+-quantity Int
+-Payment Choices(cash, card, click)
+-total_price Dec
+
+
+
+
+
+
+
+
+
