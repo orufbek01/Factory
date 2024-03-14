@@ -3,11 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 
 
-class Region(models.Model):
-    name = models.CharField(max_length=100, verbose_name="viloyat")
 
-    def __str__(self):
-        return self.name
 
 
 class Category(models.Model):
@@ -32,7 +28,6 @@ class User(models.Model):
             code='Invalid number'
         )
     ])
-    region = models.ForeignKey(Region,verbose_name="viloyat talash", on_delete=models.CASCADE,)
     address = models.TextField()
 
     def __str__(self):
