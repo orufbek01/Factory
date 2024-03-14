@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-
+from .token import get_tokens_for_user
 def register_view(request):
     if request.method == "POST":
         username = request.POST.get('username')
@@ -26,6 +26,7 @@ def login_view(request):
         usr = authenticate(username=username, password=password)
         if usr is not None:
             login(request, usr)
+            tokens = get_tokens_for_user(usr)
         return redirect("index_url")
     return render(request,'login.html')
 
